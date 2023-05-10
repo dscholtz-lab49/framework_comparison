@@ -1,3 +1,4 @@
+import { Page } from "@playwright/test";
 import config from "../playwright.config";
 
 export abstract class BasePage {
