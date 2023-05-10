@@ -1,17 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { WebFormPage } from "../pages/web-form/WebFormPage";
-import { PracticePage } from "../pages/practice/PracticePage";
 
 test.describe("Web form", () => {
   let webForm: WebFormPage;
-  let practicePage: PracticePage;
 
   test.beforeEach(async ({ context }) => {
     const page = await context.newPage();
-    practicePage = new PracticePage(page);
     webForm = new WebFormPage(page);
-    await practicePage.openPage(page);
-    await practicePage.goToWebFormPage();
+    await webForm.openPage();
   });
 
   test.afterAll(async () => {});

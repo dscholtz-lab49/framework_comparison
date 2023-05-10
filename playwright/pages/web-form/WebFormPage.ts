@@ -45,7 +45,7 @@ export class WebFormPage extends BasePage {
   }
 
   async openPage() {
-    await this.page.goto("/web-form.html");
+    await this.page.goto(this.baseURL + "/web-form.html");
   }
 
   async fillTextInput(text: string) {
