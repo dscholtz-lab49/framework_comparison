@@ -1,4 +1,5 @@
-import { Page, expect } from "@playwright/test";
+import { Locator, Page, expect } from "@playwright/test";
+import { DragAndDropPage } from "../pages/draganddrop/DragAndDropPage";
 
 export async function pause(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -16,4 +17,28 @@ export async function waitForIFrameContentToLoad(page: Page, url: string) {
       }
     )
     .toBe(200);
+}
+
+export async function dragAndDrop(
+  page: Page,
+  locatorToDrag: Locator,
+  locatorDragTarget: Locator
+) {
+  const dragBoundingBox = await locatorToDrag.boundingBox();
+  const dropBoundingBox = await locatorDragTarget.boundingBox();
+  await page.mouse.move(
+    dragBoundingBox.x + dragBoundingBox.width / 2,
+    dragBoundingBox.y + dragBoundingBox.height / 2
+  );
+
+  await page.mouse.down();
+
+  const targetX =
+    dragBoundingBox?.x || dropBoundingBox.x + dropBoundingBox.width / 2;
+  const targetY =
+    dragBoundingBox?.y || dropBoundingBox.y + dropBoundingBox.height / 2;
+
+  await page.mouse.move(targetX, targetY);
+
+  await page.mouse.up();
 }
