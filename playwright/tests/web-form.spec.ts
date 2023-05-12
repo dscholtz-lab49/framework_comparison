@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { WebFormPage } from "../pages/web-form/WebFormPage";
 
-test.describe("Web form", () => {
+test.describe("Web form page tests", () => {
   let webForm: WebFormPage;
 
   test.beforeEach(async ({ context }) => {
@@ -65,7 +65,7 @@ test.describe("Web form", () => {
   });
 
   test("Unchecking the checked checkbox should be unchecked", async () => {
-    expect(webForm.checkedCheckbox.isChecked()).toBeTruthy();
+    expect(webForm.checkedCheckbox).toBeChecked();
     await webForm.checkedCheckbox.uncheck();
     expect(webForm.checkedCheckbox).not.toBeChecked();
   });
