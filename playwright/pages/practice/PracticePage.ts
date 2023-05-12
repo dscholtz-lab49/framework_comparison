@@ -10,6 +10,7 @@ export class PracticePage extends BasePage {
 
   async openPage(page: Page) {
     await page.goto("");
+    await page.waitForLoadState();
   }
 
   async goToWebFormPage() {

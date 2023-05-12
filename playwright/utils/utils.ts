@@ -1,11 +1,10 @@
 import { Locator, Page, expect } from "@playwright/test";
-import { DragAndDropPage } from "../pages/draganddrop/DragAndDropPage";
 
 export async function pause(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-export async function waitForIFrameContentToLoad(page: Page, url: string) {
+export async function pollForContentToLoad(page: Page, url: string) {
   await expect
     .poll(
       async () => {
@@ -41,4 +40,8 @@ export async function dragAndDrop(
   await page.mouse.move(targetX, targetY);
 
   await page.mouse.up();
+}
+
+export async function scrollToBottom(page: Page) {
+  page.evaluate("window.scrollBy(0, document.body.scrollHeight)");
 }

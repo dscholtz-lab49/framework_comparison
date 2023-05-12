@@ -20,10 +20,12 @@ export class WebFormPage extends BasePage {
   rangeSelector: Locator;
   datalistOptions: Locator;
   page: Page;
+  pageUrl: string;
   constructor(page: Page) {
     super();
     this.page = page;
     this.keyboard = page.keyboard;
+    this.pageUrl = this.baseURL + "/web-form.html";
     this.textInput = page.locator("#my-text-id");
     this.passwordInput = page.locator("[name=my-password]");
     this.textArea = page.locator("[name=my-textarea]");
@@ -45,7 +47,8 @@ export class WebFormPage extends BasePage {
   }
 
   async openPage() {
-    await this.page.goto(this.baseURL + "/web-form.html");
+    await this.page.goto(this.pageUrl);
+    await this.page.waitForLoadState();
   }
 
   async fillTextInput(text: string) {
