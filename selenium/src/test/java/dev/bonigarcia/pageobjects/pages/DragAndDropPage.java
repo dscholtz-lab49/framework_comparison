@@ -21,7 +21,7 @@ public class DragAndDropPage extends BasePage {
     }
 
     public void dragElementToTarget() {
-        Actions act=new Actions(driver);
+        Actions act = new Actions(driver);
 
         //Dragged and dropped.
         act.dragAndDrop(draggable, target).build().perform();

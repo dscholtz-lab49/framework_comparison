@@ -13,7 +13,7 @@ public class BaseTest {
     protected String BASE_URL = "https://bonigarcia.dev/selenium-webdriver-java";
 
     @BeforeAll
-    public void setUp(){
+    public void setUp() {
         driver = driverFactory.getDriver();
         driver.manage().deleteAllCookies();
     }
@@ -29,7 +29,7 @@ public class BaseTest {
     }
 
     @AfterAll
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }

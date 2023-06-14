@@ -34,7 +34,7 @@ public class WebFormPage extends BasePage {
     @FindBy(name = "my-datalist")
     public WebElement dropDownDataList;
 
-    @FindBys(@FindBy( xpath = "//*[@id='my-options']"))
+    @FindBys(@FindBy(xpath = "//*[@id='my-options']"))
     public List<WebElement> dataListOptions;
 
     @FindBy(name = "my-file")
@@ -63,7 +63,7 @@ public class WebFormPage extends BasePage {
 
     @FindBy(name = "my-range")
     public WebElement rangeSelector;
-    
+
     private static final String VALUE = "value";
 
 
@@ -122,7 +122,7 @@ public class WebFormPage extends BasePage {
         waitForElementVisible(dropDownDataList);
         dropDownDataList.sendKeys(option);
 
-        String optionValue = driver.findElement(By.xpath("//option[contains(@value,'"+option+"')]")).getAttribute(VALUE);
+        String optionValue = driver.findElement(By.xpath("//option[contains(@value,'" + option + "')]")).getAttribute(VALUE);
         dropDownDataList.clear();
         dropDownDataList.sendKeys(optionValue);
     }
@@ -138,7 +138,7 @@ public class WebFormPage extends BasePage {
         fileInput.sendKeys(filePath);
         //In normal case there would be a submit button
     }
-    
+
     public String getValueOfFileInput() {
         return getValueFromElement(fileInput, VALUE);
     }

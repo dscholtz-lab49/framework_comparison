@@ -8,13 +8,13 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-public class IFrameTest  extends BaseTest {
+public class IFrameTest extends BaseTest {
     private static final String IFRAME_URL = "/iframes.html";
     IFramePage iFramePage;
 
     @Override
     protected String getBaseUrl() {
-        return BASE_URL+IFRAME_URL;
+        return BASE_URL + IFRAME_URL;
     }
 
     @BeforeAll

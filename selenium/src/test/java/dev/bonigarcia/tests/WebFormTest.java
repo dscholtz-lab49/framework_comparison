@@ -15,7 +15,7 @@ public class WebFormTest extends BaseTest {
 
     @Override
     protected String getBaseUrl() {
-        return BASE_URL+WEB_FORM_ENDPOINT;
+        return BASE_URL + WEB_FORM_ENDPOINT;
     }
 
     @BeforeAll
@@ -47,7 +47,7 @@ public class WebFormTest extends BaseTest {
     public void InputFieldsShouldAcceptAnyText() {
         String textInputValue = "test";
         String passwordInputValue = "password";
-        String textAreaValue= "text";
+        String textAreaValue = "text";
         webFormPage.fillTextInput(textInputValue);
         webFormPage.fillPasswordInput(passwordInputValue);
         webFormPage.fillTextArea(textAreaValue);

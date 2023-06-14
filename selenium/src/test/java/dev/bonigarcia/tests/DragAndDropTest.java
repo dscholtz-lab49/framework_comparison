@@ -14,7 +14,7 @@ public class DragAndDropTest extends BaseTest {
 
     @Override
     protected String getBaseUrl() {
-        return BASE_URL+DRAG_AND_DROP_URL;
+        return BASE_URL + DRAG_AND_DROP_URL;
     }
 
     @BeforeAll
