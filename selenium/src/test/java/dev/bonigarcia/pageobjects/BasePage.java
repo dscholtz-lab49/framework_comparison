@@ -23,5 +23,4 @@ public class BasePage {
     public String getValueFromElement(WebElement element, String attributeValue) {
         return element.getAttribute(attributeValue);
     }
-
 }

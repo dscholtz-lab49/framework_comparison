@@ -10,8 +10,8 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.is;
 
 public class WebFormTest extends BaseTest {
+    private static final String WEB_FORM_ENDPOINT = "/web-form.html";
     WebFormPage webFormPage;
-    protected String WEB_FORM_ENDPOINT = "/web-form.html";
 
     @Override
     protected String getBaseUrl() {

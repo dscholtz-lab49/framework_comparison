@@ -12,38 +12,55 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 
 public class WebFormPage extends BasePage {
+
     @FindBy(css = "#my-text-id")
     public WebElement textInput;
+
     @FindBy(name = "my-password")
     public WebElement passwordInput;
+
     @FindBy(name = "my-textarea")
     public WebElement textArea;
+
     @FindBy(name = "my-disabled")
     public WebElement disabledInput;
+
     @FindBy(name = "my-readonly")
     public WebElement readOnlyInput;
+
     @FindBy(name = "my-select")
     public WebElement dropDownSelect;
+
     @FindBy(name = "my-datalist")
     public WebElement dropDownDataList;
+
     @FindBys(@FindBy( xpath = "//*[@id='my-options']"))
     public List<WebElement> dataListOptions;
+
     @FindBy(name = "my-file")
     public WebElement fileInput;
+
     @FindBy(id = "my-check-1")
     public WebElement checkedCheckbox;
+
     @FindBy(id = "my-check-2")
     public WebElement defaultCheckbox;
+
     @FindBy(id = "my-radio-1")
     public WebElement checkedRadioButton;
+
     @FindBy(id = "my-radio-2")
     public WebElement defaultRadioButton;
+
     @FindBy(xpath = "//button[text()='Submit']")
     public WebElement submitButton;
+
     @FindBy(xpath = "//input[@type='color']")
     public WebElement colorPicker;
+
     @FindBy(name = "my-date")
     public WebElement datePicker;
+
     @FindBy(name = "my-range")
     public WebElement rangeSelector;
     
