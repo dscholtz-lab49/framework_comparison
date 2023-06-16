@@ -1,8 +1,6 @@
 package dev.bonigarcia.pageobjects;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,11 +25,21 @@ public class BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
+    public void waitForElementsCount(By locator, int count) {
+        WebDriverWait wait = new WebDriverWait(driver, TIME_OUT);
+        wait.until(ExpectedConditions.numberOfElementsToBe(locator, count));
+    }
+
     public String getValueFromElement(WebElement element, String attributeValue) {
         return element.getAttribute(attributeValue);
     }
 
     public Alert switchToAlertPopUp() {
         return driver.switchTo().alert();
+    }
+
+    public void scrollToElement(WebElement element) {
+        JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("arguments[0].scrollIntoView()", element);
     }
 }
