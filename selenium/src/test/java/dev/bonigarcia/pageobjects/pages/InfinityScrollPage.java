@@ -20,7 +20,7 @@ public class InfinityScrollPage extends BasePage {
     public void scrollToBottomUntil(int count) {
         int elementsCount = getCurrentParagraphs();
 
-        while (elementsCount < count) {
+        while (elementsCount <= count) {
             JavascriptExecutor jse = (JavascriptExecutor) driver;
             jse.executeScript("window.scrollTo(0, document.body.scrollHeight);");
             elementsCount = getCurrentParagraphs();
