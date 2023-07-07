@@ -1,7 +1,7 @@
 import { Locator, Page, expect } from "@playwright/test";
 import { BasePage } from "../BasePage";
 import { scrollToBottom } from "../../utils/utils";
-export class InfinityScrollPage extends BasePage {
+export class InfiniteScrollPage extends BasePage {
   page: Page;
   content: Locator;
   contentUrl;

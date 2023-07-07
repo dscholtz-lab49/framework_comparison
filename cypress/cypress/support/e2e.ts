@@ -15,27 +15,28 @@
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
+import "@4tw/cypress-drag-drop";
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-before(() => {
-  // root-level hook
-  // runs once before all tests
-});
+// before(() => {
+//   // root-level hook
+//   // runs once before all tests
+// });
 
-beforeEach(() => {
-  // root-level hook
-  // runs before every test block
-});
+// beforeEach(() => {
+//   // root-level hook
+//   // runs before every test block
+// });
 
-afterEach(() => {
-  // runs after each test block
-});
+// afterEach(() => {
+//   // runs after each test block
+// });
 
-after(() => {
-  // runs once all tests are done
-});
+// after(() => {
+//   // runs once all tests are done
+// });
 
 Cypress.Commands.add("getByName", (selector) => {
   return cy.get(`[name=${selector}]`);

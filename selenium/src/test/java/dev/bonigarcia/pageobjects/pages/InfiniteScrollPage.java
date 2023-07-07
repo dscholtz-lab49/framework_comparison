@@ -7,12 +7,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class InfinityScrollPage extends BasePage {
+public class InfiniteScrollPage extends BasePage {
 
     @FindBy(id = "content")
     public WebElement content;
 
-    public InfinityScrollPage(WebDriver driver) {
+    public InfiniteScrollPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
