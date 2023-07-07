@@ -13,7 +13,20 @@ context("Infinite Scroll page tests", () => {
 
   describe("Testing infinite scroll functionality", () => {
     it("Content should be loaded infinitly by scrolling down", () => {
-      infiniteScroll.scrollToBottomUntil(3);
+      infiniteScroll.elements
+        .paragraphs()
+        .should("have.length", 20)
+        .then((content) => {
+          cy.window().scrollTo("bottom");
+          infiniteScroll.elements
+            .paragraphs()
+            .should("have.length", content.length * 2);
+
+          cy.window().scrollTo("bottom");
+          infiniteScroll.elements
+            .paragraphs()
+            .should("have.length", content.length * 3);
+        });
     });
   });
 });
