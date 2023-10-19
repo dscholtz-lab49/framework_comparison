@@ -25,13 +25,13 @@ public class DragAndDropTest extends BaseTest {
     @Test
     public void elementShouldBeDragAndDroppedToTarget() {
         // Original position
-        assertThat(dragAndDropPage.getXLocOfDraggableElement(), is(72));
+        assertThat(dragAndDropPage.getXLocOfDraggableElement(), is(305));
         assertThat(dragAndDropPage.getYLocOfDraggableElement(), is(236));
 
         dragAndDropPage.dragElementToTarget();
 
         // New position
-        assertThat(dragAndDropPage.getXLocOfDraggableElement(), is(732));
+        assertThat(dragAndDropPage.getXLocOfDraggableElement(), is(965));
         assertThat(dragAndDropPage.getYLocOfDraggableElement(), is(236));
     }
 }
