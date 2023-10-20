@@ -13,6 +13,7 @@ test.describe("Dialog boxes page tests", () => {
   test.afterAll(async () => {});
 
   test("Clicking on alert button should open an alert dialog", async () => {
+    expect(dialogPage.alertButton).toBeEnabled();
     await dialogPage.clickAlertButton();
     dialogPage.isDialogVisibleAndAccept("alert", "Hello world!");
   });

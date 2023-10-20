@@ -39,7 +39,7 @@ export class DialogPage extends BasePage {
   }
 
   async clickAlertButton() {
-    this.alertButton.click();
+    await this.alertButton.click();
   }
 
   async clickConfirmButton() {
